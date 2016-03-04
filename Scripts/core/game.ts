@@ -1,4 +1,18 @@
-﻿/// <reference path = "_reference.ts" />
+﻿/*
+
+    WEB GAME PROGRAMMING MIDTERM
+    ============================
+    
+    Developed as a COMP397 (Web Game Programming) test.
+    
+    Created and programmed by Joseph Tinoco - Winter 2016
+    
+    Based on https://github.com/CentennialCollege/COMP397-W2016-SlotMachineDemo
+    
+*/
+
+
+/// <reference path = "_reference.ts" />
 
 // global variables
 var assets: createjs.LoadQueue;
@@ -15,7 +29,7 @@ var play: scenes.Play;
 var end: scenes.End;
 
 var assetData:objects.Asset[] = [
-    // Add your Assets here
+    // Assets
     {id: "StartButton", src:"../../Assets/images/StartButton.png"},
     {id: "StartOverButton", src:"../../Assets/images/StartOverButton.png"},
     {id: "RollButton", src:"../../Assets/images/RollButton.png"},
