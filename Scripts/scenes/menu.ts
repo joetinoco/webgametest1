@@ -16,7 +16,7 @@ module scenes {
         public start(): void {
             //Add Menu Label
             this._menuLabel = new objects.Label(
-                "MENU SCENE", "60px Consolas",
+                "Dice Roller", "60px Consolas",
                 "#000000",
                 config.Screen.CENTER_X, config.Screen.CENTER_Y);
             this.addChild(this._menuLabel);
@@ -45,9 +45,9 @@ module scenes {
         
         //EVENT HANDLERS ++++++++++++++++++++
         
-        // LEFT_CAVE Button click event handler
+        // Start game button handler
         private _startButtonClick(event: createjs.MouseEvent) {
-            // Switch to the LEFT_CAVE Scene
+            // Switch to the PLAY Scene
             scene = config.Scene.PLAY;
             changeScene();
         }

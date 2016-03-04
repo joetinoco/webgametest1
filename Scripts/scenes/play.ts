@@ -1,4 +1,6 @@
 // PLAY SCENE
+//
+// Main game scene
 module scenes {
     export class Play extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
@@ -59,23 +61,22 @@ module scenes {
                 config.Screen.CENTER_Y + 150);
             this.addChild(this._rollButton);
             
-            // Start Button event listener
+            // Roll button event listener
             this._rollButton.on("click", this._rollButtonClick, this);
 
-            // add this scene to the global stage container
+            // Add this scene to the global stage container
             stage.addChild(this);
         }
 
         // PLAY Scene updates here
         public update(): void {
-            this.removeAllChildren();
             
+            // Redraw all elements
+            this.removeAllChildren();     
             this.addChild(this._die1Label);
             this.addChild(this._die2Label);
-            
             this.addChild(this._die1Image);
             this.addChild(this._die2Image);
-            
             this.addChild(this._rollButton);
             
         }
@@ -84,10 +85,11 @@ module scenes {
         //EVENT HANDLERS ++++++++++++++++++++
         private _rollButtonClick(event: createjs.MouseEvent) {
             
+            // Randomize the die results
             this._die1 = this.randomDieResult();
             this._die2 = this.randomDieResult();
             
-            // Update dice images and labels
+            // Update dice images and labels according to the new values
             this._die1Label = new objects.Label(
                 this._die1, "60px Consolas",
                 "#000000",
@@ -108,6 +110,7 @@ module scenes {
            
         }
         
+        // AUXILIARY FUNCTIONS ++++++++++++++++++++
         // Generates a random die result
         private randomDieResult(): string{            
             return Math.ceil(Math.random() * 6).toString();

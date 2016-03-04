@@ -1,4 +1,6 @@
 module objects {
+    // DIE object
+    // Represents a game die image
     export class Die extends createjs.Bitmap {
         //PRIVATE INSTANCE VARIABLES
         width: number;

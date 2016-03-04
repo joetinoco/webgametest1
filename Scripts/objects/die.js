@@ -5,6 +5,8 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
+    // DIE object
+    // Represents a game die image
     var Die = (function (_super) {
         __extends(Die, _super);
         //CONSTRUCTOR

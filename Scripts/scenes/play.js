@@ -4,6 +4,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 // PLAY SCENE
+//
+// Main game scene
 var scenes;
 (function (scenes) {
     var Play = (function (_super) {
@@ -31,13 +33,14 @@ var scenes;
             // Add roll button
             this._rollButton = new objects.Button("RollButton", config.Screen.CENTER_X, config.Screen.CENTER_Y + 150);
             this.addChild(this._rollButton);
-            // Start Button event listener
+            // Roll button event listener
             this._rollButton.on("click", this._rollButtonClick, this);
-            // add this scene to the global stage container
+            // Add this scene to the global stage container
             stage.addChild(this);
         };
         // PLAY Scene updates here
         Play.prototype.update = function () {
+            // Redraw all elements
             this.removeAllChildren();
             this.addChild(this._die1Label);
             this.addChild(this._die2Label);
@@ -47,20 +50,18 @@ var scenes;
         };
         //EVENT HANDLERS ++++++++++++++++++++
         Play.prototype._rollButtonClick = function (event) {
+            // Randomize the die results
             this._die1 = this.randomDieResult();
             this._die2 = this.randomDieResult();
+            // Update dice images and labels according to the new values
             this._die1Label = new objects.Label(this._die1, "60px Consolas", "#000000", config.Screen.CENTER_X - 150, config.Screen.CENTER_Y + 50);
             this._die2Label = new objects.Label(this._die2, "60px Consolas", "#000000", config.Screen.CENTER_X + 150, config.Screen.CENTER_Y + 50);
-            // Add dice images
             this._die1Image = new objects.Die(this._die1, config.Screen.CENTER_X - 150, config.Screen.CENTER_Y - 50);
             this._die2Image = new objects.Die(this._die2, config.Screen.CENTER_X + 150, config.Screen.CENTER_Y - 50);
         };
+        // AUXILIARY FUNCTIONS ++++++++++++++++++++
         // Generates a random die result
         Play.prototype.randomDieResult = function () {
-            // var result: number;
-            // do {
-            //     result = Math.ceil(Math.random() * 6);
-            // }while(result === 0 || result > 6);
             return Math.ceil(Math.random() * 6).toString();
         };
         return Play;

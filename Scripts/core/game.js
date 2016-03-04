@@ -1,3 +1,15 @@
+/*
+
+    WEB GAME PROGRAMMING MIDTERM
+    ============================
+    
+    Developed as a COMP397 (Web Game Programming) test.
+    
+    Created and programmed by Joseph Tinoco - Winter 2016
+    
+    Based on https://github.com/CentennialCollege/COMP397-W2016-SlotMachineDemo
+    
+*/
 /// <reference path = "_reference.ts" />
 // global variables
 var assets;
@@ -9,9 +21,8 @@ var scene;
 // Game Scenes
 var menu;
 var play;
-var end;
 var assetData = [
-    // Add your Assets here
+    // Assets
     { id: "StartButton", src: "../../Assets/images/StartButton.png" },
     { id: "StartOverButton", src: "../../Assets/images/StartOverButton.png" },
     { id: "RollButton", src: "../../Assets/images/RollButton.png" },
@@ -82,13 +93,6 @@ function changeScene() {
             play = new scenes.Play();
             currentScene = play;
             console.log("Starting PLAY Scene");
-            break;
-        case config.Scene.END:
-            // show the END scene
-            stage.removeAllChildren();
-            end = new scenes.End();
-            currentScene = end;
-            console.log("Starting END Scene");
             break;
     }
     console.log(currentScene.numChildren);

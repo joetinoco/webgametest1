@@ -26,7 +26,6 @@ var scene: number;
 // Game Scenes
 var menu: scenes.Menu;
 var play: scenes.Play;
-var end: scenes.End;
 
 var assetData:objects.Asset[] = [
     // Assets
@@ -115,13 +114,6 @@ function changeScene(): void {
             play = new scenes.Play();
             currentScene = play;
             console.log("Starting PLAY Scene");
-            break;
-        case config.Scene.END:
-            // show the END scene
-            stage.removeAllChildren();
-            end = new scenes.End();
-            currentScene = end;
-            console.log("Starting END Scene");
             break;
     }
 
