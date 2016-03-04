@@ -1,0 +1,5 @@
+GitHub repo (source code) - https://github.com/joetinoco/webgametest1
+
+Cloud deployment - http://webgametest1.azurewebsites.net/
+
+NOTE: I finished 2nd in the race.
